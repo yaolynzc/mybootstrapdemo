@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap</title>
+  <link rel="stylesheet" href="static/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+  <button type="button" class="btn" data-toggle="button">Button</button>
+  <button type="button" class="btn" data-loading-text="Loading...">Button</button>
+  
+  <!-- 多选式按钮组 -->
+  <div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-primary active">
+      <input type="checkbox" name="options">Option1
+    </label>
+    <label class="btn btn-primary">
+      <input type="checkbox" name="options">Option2
+    </label>
+    <label class="btn btn-primary">
+      <input type="checkbox" name="options">Option3
+    </label>
+  </div>
+
+  <!-- 单选式按钮组 -->
+  <div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-primary">
+      <input type="radio" name="options">Option1
+    </label>
+    <label class="btn btn-primary">
+      <input type="radio" name="options">Option2
+    </label>
+    <label class="btn btn-primary">
+      <input type="radio" name="options">Option3
+    </label>
+  </div>
+  <script src="static/jquery/1.12.4/jquery.min.js"></script>
+  <script src="static/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    $(function(){
+      $(".btn").click(function(){
+        $(this).button('loading').delay(1000).queue(function(){
+          $(this).button('reset');
+          $(this).dequeue();
+        });
+      });
+    });
+  </script>
+</body>
+</html>
